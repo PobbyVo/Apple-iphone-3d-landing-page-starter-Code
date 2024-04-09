@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { ColorContextProvider } from "./context/ColorContext";
+import BatterySection from "./sections/BatterySection";
+import ColorSection from "./sections/ColorSection";
+import DesignSection from "./sections/DesignSection";
+import DisplaySection from "./sections/DisplaySection";
+import HeroSection from "./sections/HeroSection";
+import PhoneModel from "./sections/PhoneModel ";
+import ProcessorSection from "./sections/ProcessorSection";
+import Quote from "./sections/Quote";
+import { GlobalStyle } from "./styles/GlobalStyle";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			<GlobalStyle />
+			<Quote />
+			<PhoneModel />
+			<HeroSection />
+			<DesignSection />
+			<DisplaySection />
+			<ProcessorSection />
+			<BatterySection />
+			<ColorContextProvider>
+				<ColorSection />
+			{/* <CameraSection /> */}
+			{/* <PricingSection /> */}
+			</ColorContextProvider>
+		</>
+	);
 }
 
 export default App;
